@@ -1,17 +1,14 @@
 spring: 
  profiles:
-  active: dev
+  active: 
+  - dev
 ---
-server: 
- port: 8888
 spring: 
  application: 
   name: microservice-config-dev
  profiles: dev
 
 ---
-server: 
- port: 9999
 spring: 
  application: 
   name: microservice-config-test
