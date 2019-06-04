@@ -7,7 +7,6 @@ spring:
  application: 
   name: microservice-config-dev
  profiles: dev
-
 ---
 spring: 
  application: 
