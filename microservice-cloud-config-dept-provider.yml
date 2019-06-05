@@ -1,0 +1,62 @@
+spring: 
+ profiles:
+  active: 
+  - dev
+ 
+---
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.2.122:3306/learn
+    username: root
+    password: 123456
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      service-url:
+        defaultZone: http://localhost:7001/eureka/
+    register-with-eureka: true
+  instance:
+    instance-id: mircroservice-cloud-config-dept-provider  #声明注册到eureka服务上的名称
+    prefer-ip-address: true #是否使用IP作为请求地址
+info:
+  app.name: mircroservice-cloud-config-dept-provider
+  company.name: com.learn.springcloud
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+---
+server:
+  port: 8002
+mybatis:
+  config-location: classpath:mybatis/mybatis.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.2.122:3306/learn1
+    username: root
+    password: 123456
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      service-url:
+        defaultZone: http://localhost:7002/eureka/
+    register-with-eureka: true
+  instance:
+    instance-id: mircroservice-cloud-config-dept-provider  #声明注册到eureka服务上的名称
+    prefer-ip-address: true #是否使用IP作为请求地址
+info:
+  app.name: mircroservice-cloud-config-dept-provider
+  company.name: com.learn.springcloud
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
