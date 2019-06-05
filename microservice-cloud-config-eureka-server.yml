@@ -27,4 +27,4 @@ eureka:
   service-url: 
    defaultZone: http://eureka7002:7002/eureka/
 spring: 
- profiles: dev
+ profiles: test
